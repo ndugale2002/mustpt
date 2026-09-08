@@ -85,3 +85,4 @@ app.listen(PORT, () => {
     console.log(`MUST IPT API running on http://localhost:${PORT}`);
 
 });
+module.exports = app;
