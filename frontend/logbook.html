@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Logbook - MUST IPT</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        MUST IPT SYSTEM
+    </div>
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="logbook.html">
+            Student Logbook
+        </a>
+
+        <a href="department.html">
+            Department
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- STUDENT LOGIN -->
+
+<section id="studentLoginSection"
+         class="login-wrapper">
+
+    <div class="login-card">
+
+        <h2>
+            Student Login
+        </h2>
+
+        <p>
+            Login kwa kutumia Registration Number
+            na password.
+        </p>
+
+        <div id="loginMessage"
+             class="message">
+        </div>
+
+        <form id="studentLoginForm">
+
+            <div class="form-group">
+
+                <label>
+                    Registration Number
+                </label>
+
+                <input
+                    type="text"
+                    id="loginRegNo"
+                    placeholder="Example: T.23-04-00001"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="studentPassword"
+                    placeholder="Enter password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                class="btn primary"
+                type="submit">
+
+                Login
+
+            </button>
+
+        </form>
+
+        <p style="margin-top:16px;font-size:13px;">
+
+            Demo password:
+            <strong>
+                student123
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- STUDENT DASHBOARD -->
+
+<main id="studentDashboard"
+      class="page-container hidden">
+
+    <div class="top-actions">
+
+        <div>
+
+            <h2>
+                Student IPT Logbook
+            </h2>
+
+            <p id="welcomeStudent"></p>
+
+        </div>
+
+        <button
+            class="btn danger"
+            id="studentLogoutBtn">
+
+            Logout
+
+        </button>
+
+    </div>
+
+
+    <!-- STUDENT DETAILS -->
+
+    <div class="card">
+
+        <h3>
+            Student Details
+        </h3>
+
+        <div class="grid-3">
+
+            <div class="form-group">
+
+                <label>
+                    Registration Number
+                </label>
+
+                <input
+                    type="text"
+                    id="regNo"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Enter full name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Course
+                </label>
+
+                <input
+                    type="text"
+                    id="course"
+                    placeholder="Example: BSc ICT"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- WEEKS -->
+
+    <div class="card">
+
+        <h3>
+            Select IPT Week
+        </h3>
+
+        <div id="weekButtons"
+             class="week-buttons">
+        </div>
+
+
+        <form id="weeklyForm"
+              class="hidden">
+
+            <h3 id="weekTitle">
+                Week
+            </h3>
+
+
+            <div id="daysContainer">
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Weekly Summary
+                </label>
+
+                <textarea
+                    id="weeklySummary"
+                    placeholder="Write weekly summary..."
+                    required>
+                </textarea>
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button
+                    class="btn success"
+                    type="submit"
+                    id="submitBtn">
+
+                    Submit Week
+
+                </button>
+
+
+                <button
+                    class="btn secondary"
+                    type="button"
+                    id="cancelBtn">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <div id="studentMessage"
+             class="message">
+        </div>
+
+    </div>
+
+
+    <!-- RECORDS -->
+
+    <div class="card">
+
+        <h3>
+            Submitted IPT Records
+        </h3>
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Week
+                        </th>
+
+                        <th>
+                            Reg No
+                        </th>
+
+                        <th>
+                            Full Name
+                        </th>
+
+                        <th>
+                            Course
+                        </th>
+
+                        <th>
+                            Summary
+                        </th>
+
+                        <th>
+                            Submitted
+                        </th>
+
+                        <th>
+                            Actions
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="studentRecordsBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- VIEW MODAL -->
+
+<div id="viewModal"
+     class="modal hidden">
+
+    <div class="modal-content">
+
+        <h3>
+            IPT Record Details
+        </h3>
+
+        <div id="viewContent">
+        </div>
+
+        <button
+            class="btn secondary"
+            id="closeModalBtn">
+
+            Close
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="logbook.js"></script>
+
+</body>
+
+</html>

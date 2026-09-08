@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Department - MUST IPT
+    </title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        MUST IPT SYSTEM
+    </div>
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="logbook.html">
+            Student Logbook
+        </a>
+
+        <a href="department.html">
+            Department
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- DEPARTMENT LOGIN -->
+
+<section id="departmentLoginSection"
+         class="login-wrapper">
+
+    <div class="login-card">
+
+        <h2>
+            Department Login
+        </h2>
+
+        <p>
+            Login kwa kutumia Lecturer ID
+            na password.
+        </p>
+
+
+        <div id="departmentLoginMessage"
+             class="message">
+        </div>
+
+
+        <form id="departmentLoginForm">
+
+            <div class="form-group">
+
+                <label>
+                    Lecturer ID
+                </label>
+
+                <input
+                    type="text"
+                    id="lecturerId"
+                    placeholder="Example: LEC001"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="departmentPassword"
+                    placeholder="Enter password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                class="btn primary"
+                type="submit">
+
+                Login
+
+            </button>
+
+        </form>
+
+
+        <p style="margin-top:16px;font-size:13px;">
+
+            Demo password:
+            <strong>
+                lecturer123
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- DEPARTMENT DASHBOARD -->
+
+<main id="departmentDashboard"
+      class="page-container hidden">
+
+    <div class="top-actions">
+
+        <div>
+
+            <h2>
+                Department Dashboard
+            </h2>
+
+            <p id="welcomeLecturer"></p>
+
+        </div>
+
+
+        <button
+            class="btn danger"
+            id="departmentLogoutBtn">
+
+            Logout
+
+        </button>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>
+            Student IPT Submissions
+        </h3>
+
+
+        <div class="grid-3">
+
+            <div class="form-group">
+
+                <label>
+                    Search Student
+                </label>
+
+                <input
+                    type="text"
+                    id="searchStudent"
+                    placeholder="Search Reg No or Name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Filter Week
+                </label>
+
+                <select id="filterWeek">
+
+                    <option value="">
+                        All Weeks
+                    </option>
+
+                    <option value="1">
+                        Week 1
+                    </option>
+
+                    <option value="2">
+                        Week 2
+                    </option>
+
+                    <option value="3">
+                        Week 3
+                    </option>
+
+                    <option value="4">
+                        Week 4
+                    </option>
+
+                    <option value="5">
+                        Week 5
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Reg No
+                        </th>
+
+                        <th>
+                            Full Name
+                        </th>
+
+                        <th>
+                            Course
+                        </th>
+
+                        <th>
+                            Week
+                        </th>
+
+                        <th>
+                            Weekly Summary
+                        </th>
+
+                        <th>
+                            Submitted
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="departmentRecordsBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- MODAL -->
+
+<div id="departmentViewModal"
+     class="modal hidden">
+
+    <div class="modal-content">
+
+        <h3>
+            Student IPT Details
+        </h3>
+
+        <div id="departmentViewContent">
+        </div>
+
+
+        <button
+            class="btn secondary"
+            id="departmentCloseModalBtn">
+
+            Close
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="department.js"></script>
+
+</body>
+
+</html>
